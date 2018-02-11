@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mapping</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="show_sql">true</property>		
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>		
+		<property name="net.sf.ehcache.configurationResourceName">/myehcache.xml</property>		
+		<!-- <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
+		<!-- <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property> -->
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<mapping class="com.djose.hiberante.mapping.onetoone.User"></mapping>
+		<mapping class="com.djose.hiberante.mapping.onetoone.Vechicle"></mapping>
+		<mapping class="com.djose.hiberante.mapping.onetomany.Country"></mapping>
+		<mapping class="com.djose.hiberante.mapping.onetomany.State"></mapping>
+		<mapping class="com.djose.hiberante.mapping.manytomany.Student"></mapping>
+		<mapping class="com.djose.hiberante.mapping.manytomany.Subject"></mapping>
+		<mapping class="com.djose.hiberante.inheritance.Circle"></mapping>
+		<mapping class="com.djose.hiberante.inheritance.Rectangle"></mapping>
+		<mapping class="com.djose.hiberante.inheritance.Shape"></mapping>
+		<mapping class="com.djose.hiberante.query.Employee"></mapping>
+		<mapping class="com.djose.hiberante.query.Address"></mapping>
+	</session-factory>
+</hibernate-configuration>
